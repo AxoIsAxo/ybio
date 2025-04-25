@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}New Paste{% endblock %}
+
+{% block content %}
+    <h1>Create New Paste</h1>
+    <form method="POST" action="{{ url_for('index') }}">
+        <div class="mb-3">
+            <label for="content" class="form-label">Paste Content (Markdown enabled)</label>
+            <textarea class="form-control" id="content" name="content" rows="15" required></textarea>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="password" class="form-label">Password (for editing)</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="custom_slug" class="form-label">Custom URL Slug (optional)</label>
+                <input type="text" class="form-control" id="custom_slug" name="custom_slug" placeholder="e.g., my-cool-paste (leave blank for random)">
+                <div class="form-text">Only letters, numbers, hyphens, and underscores allowed.</div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Paste</button>
+    </form>
+{% endblock %}

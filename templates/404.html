@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Not Found{% endblock %}
+
+{% block content %}
+    <h1>404 - Not Found</h1>
+    <p>The paste you are looking for does not exist.</p>
+    <a href="{{ url_for('index') }}" class="btn btn-primary">Go Home</a>
+{% endblock %}
